@@ -7,6 +7,7 @@ import userRoutes from "./routes/users.js";
 import videoRoutes from "./routes/users.js";
 import commentRoutes from "./routes/users.js";
 import authRoutes from "./routes/auth.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 dotenv.config();
@@ -30,6 +31,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
+
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
