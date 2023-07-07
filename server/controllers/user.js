@@ -1,4 +1,5 @@
 import User from "../models/user.js";
+import { createError } from "../error.js";
 
 export const update = async (req, res, next) => {
   if (req.params.id === req.user.id) {
