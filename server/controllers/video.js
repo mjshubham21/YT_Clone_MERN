@@ -33,6 +33,7 @@ export const updateVideo = async (req, res, next) => {
     next(err);
   }
 };
+
 export const deleteVideo = async (req, res, next) => {
   try {
     const video = await Video.findById(req.params.id);
@@ -40,7 +41,7 @@ export const deleteVideo = async (req, res, next) => {
     if (!video) return next(createError(404, "Video not found!!!"));
 
     if (req.user.id === video.userId) {
-      await Video.findByIdAnddelete(req.params.id, { new: true });
+      await Video.findByIdAnddelete(req.params.id);
       res.status(200).json("Video has been deleteVideo...");
     } else {
       return next(createError(403, "You can delete only your video!!!"));
@@ -49,6 +50,7 @@ export const deleteVideo = async (req, res, next) => {
     next(err);
   }
 };
+
 export const getVideo = async (req, res, next) => {
   try {
     const video = await Video.findById(req.params.id);
@@ -70,6 +72,7 @@ export const addView = async (req, res, next) => {
     next(err);
   }
 };
+
 export const random = async (req, res, next) => {
   try {
     const videos = await Video.aggregate([{ $sample: { size: 40 } }]);
@@ -79,6 +82,7 @@ export const random = async (req, res, next) => {
     next(err);
   }
 };
+
 export const trend = async (req, res, next) => {
   try {
     const videos = await Video.find().sort({ views: -1 }).limit(40);
@@ -88,6 +92,7 @@ export const trend = async (req, res, next) => {
     next(err);
   }
 };
+
 export const sub = async (req, res, next) => {
   try {
     const user = await User.findById(req.user.id);
