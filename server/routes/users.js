@@ -7,7 +7,7 @@ import {
   unsubscribe,
   like,
   dislike,
-} from "../controllers/User.js";
+} from "../controllers/user.js";
 import { get } from "mongoose";
 import { verifyToken } from "../verifyToken.js";
 

@@ -1,7 +1,7 @@
 import express from "express";
 import { createError } from "../error.js";
 import Video from "../models/Video.js";
-import User from "../models/user.js";
+import User from "../models/User.js";
 
 export const addVideo = async (req, res, next) => {
   const newVideo = new Video({ userId: req.user.id, ...req.body });
