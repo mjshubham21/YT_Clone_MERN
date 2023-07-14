@@ -1,11 +1,11 @@
 import { createError } from "../error.js";
-import Comment from "../models/Comment.js";
+import Comment from "../models/Comments.js";
 import Video from "../models/Video.js";
 
 export const addComment = async (req, res, next) => {
   const newComment = await Comment({
     ...req.body,
-    userId: req.user._id,
+    userId: req.user.id,
   });
   try {
     const savedComment = await newComment.save();
