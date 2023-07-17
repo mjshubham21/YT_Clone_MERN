@@ -24,6 +24,14 @@ const Img = styled.img`
   width: 2.5rem;
 `;
 
+const Item = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+`;
+
 function Menu() {
   return (
     <Container>
@@ -32,6 +40,7 @@ function Menu() {
           <Img src={logo} alt="logo" />
           MJtube
         </Logo>
+        <Item>Home.</Item>
       </Wrapper>
     </Container>
   );
