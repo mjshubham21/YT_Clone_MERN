@@ -14,8 +14,7 @@ import {
   Flag as FlagIcon,
   HelpOutline as HelpOutlineIcon,
   LightModeOutlined as LightModeOutlinedIcon,
-  AccountCircleOutlined as AccountCircleOutlinedIcon,
-  AccountCircleOutlined,
+  AccountCircleOutlined as AccountCircleOutlined,
 } from "@mui/icons-material";
 
 const Container = styled.div`
@@ -24,6 +23,8 @@ const Container = styled.div`
   height: 100vh;
   color: white;
   font-size: 0.875rem;
+  position: sticky;
+  top: 0;
 `;
 
 const Wrapper = styled.div`
