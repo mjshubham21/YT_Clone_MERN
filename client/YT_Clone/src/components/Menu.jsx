@@ -1,17 +1,20 @@
 import styled from "styled-components";
 import logo from "../img/logo.png";
-import HomeIcon from "@mui/icons-material/Home";
-import ExploreIcon from "@mui/icons-material/Explore";
-import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
-import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
-import HistoryIcon from "@mui/icons-material/History";
-import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
-import SportsBasketballIcon from "@mui/icons-material/SportsBasketball";
-import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
-import MovieCreationIcon from "@mui/icons-material/MovieCreation";
-import FlagIcon from "@mui/icons-material/Flag";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+//Material UI Icons
+import {
+  Home as HomeIcon,
+  Explore as ExploreIcon,
+  Subscriptions as SubscriptionsIcon,
+  VideoLibrary as VideoLibraryIcon,
+  History as HistoryIcon,
+  LibraryMusic as LibraryMusicIcon,
+  SportsBasketball as SportsBasketballIcon,
+  SportsEsports as SportsEsportsIcon,
+  MovieCreation as MovieCreationIcon,
+  Flag as FlagIcon,
+  HelpOutline as HelpOutlineIcon,
+  LightModeOutlined as LightModeOutlinedIcon,
+} from "@mui/icons-material";
 
 const Container = styled.div`
   flex: 1;
