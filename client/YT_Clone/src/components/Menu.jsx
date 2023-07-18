@@ -16,12 +16,14 @@ import {
   LightModeOutlined as LightModeOutlinedIcon,
   AccountCircleOutlined as AccountCircleOutlined,
 } from "@mui/icons-material";
+//PropTypes for typechecking
+import PropTypes from "prop-types";
 
 const Container = styled.div`
   flex: 1;
-  background-color: #202020;
-  height: 100vh;
-  color: white;
+  background-color: ${({ theme }) => theme.bg};
+  height: 100dvh;
+  color: ${({ theme }) => theme.text};
   font-size: 0.875rem;
   position: sticky;
   top: 0;
@@ -35,7 +37,7 @@ const Logo = styled.div`
   align-items: center;
   gap: 0.5em;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 `;
 
 const Img = styled.img`
@@ -51,17 +53,17 @@ const Item = styled.div`
 `;
 
 const Hr = styled.hr`
-  margin: 1rem 0;
-  border: 0.5px solid #373737;
+  margin: 0.3rem 0;
+  border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
 //Login
 const Login = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  line-height: 1.5;
-  font-size: 0.75rem;
+  gap: 0.3rem;
+  line-height: 1.1;
+  font-size: 0.8rem;
 `;
 
 const Button = styled.button`
@@ -79,7 +81,8 @@ const Button = styled.button`
   font-weight: bold;
 `;
 
-function Menu() {
+function Menu(props) {
+  const { darkMode, setDarkMode } = props;
   return (
     <Container>
       <Wrapper>
@@ -168,7 +171,7 @@ function Menu() {
           <HelpOutlineIcon />
           Help
         </Item>
-        <Item>
+        <Item onClick={() => setDarkMode(!darkMode)}>
           {" "}
           <LightModeOutlinedIcon />
           Light Mode
@@ -177,5 +180,10 @@ function Menu() {
     </Container>
   );
 }
+
+Menu.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  setDarkMode: PropTypes.func.isRequired,
+};
 
 export default Menu;
