@@ -22,7 +22,7 @@ import PropTypes from "prop-types";
 const Container = styled.div`
   flex: 1;
   background-color: ${({ theme }) => theme.bg};
-  height: 100dvh;
+  ${"" /* height: 100vh; */}
   color: ${({ theme }) => theme.text};
   font-size: 0.875rem;
   position: sticky;
@@ -67,7 +67,7 @@ const Login = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 0.7rem;
   background-color: transparent;
   border: 1px solid #3ea6ff;
   border-radius: 0.25rem;
@@ -77,8 +77,15 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.675rem;
   font-weight: bold;
+`;
+
+const Title = styled.h2`
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #aaaaaa;
 `;
 
 function Menu(props) {
@@ -114,6 +121,7 @@ function Menu(props) {
           </Button>
         </Login>
         <Hr />
+        <Title>Best of MJtube</Title>
         <Item>
           {" "}
           <VideoLibraryIcon />
