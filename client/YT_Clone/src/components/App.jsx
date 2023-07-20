@@ -6,6 +6,8 @@ import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
+  background-color: ${({ theme }) => theme.bg};
+  color: ${({ theme }) => theme.text};
 `;
 
 const Main = styled.div`

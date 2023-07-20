@@ -21,8 +21,8 @@ import PropTypes from "prop-types";
 
 const Container = styled.div`
   flex: 1;
-  background-color: ${({ theme }) => theme.bg};
   ${"" /* height: 100vh; */}
+  background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
   font-size: 0.875rem;
   position: sticky;
