@@ -3,7 +3,7 @@ export const darkTheme = {
   text: "#fff",
   bgLighter: "#202020",
   textSoft: "#aaaaaa",
-  soft: "373737",
+  soft: "#373737",
 };
 
 export const lightTheme = {

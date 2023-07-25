@@ -4,6 +4,14 @@ import Navbar from "../components/Navbar.jsx";
 import { darkTheme, lightTheme } from "../utils/Theme.js";
 import { useState } from "react";
 
+//React Router Dom
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+
 const Container = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.bg};
@@ -24,11 +32,13 @@ function App() {
     <>
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <Container>
+          <RouterProvider>
           <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
           <Main>
             <Navbar />
             <Wrapper>Video Wrapper...</Wrapper>
           </Main>
+          </RouterProvider>
         </Container>
       </ThemeProvider>
     </>
