@@ -9,8 +9,14 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
+  Routes,
+  Router,
   Link,
 } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "../pages/Home.jsx";
+import Video from "../pages/Video.jsx";
 
 const Container = styled.div`
   display: flex;
@@ -32,13 +38,22 @@ function App() {
     <>
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <Container>
-          <RouterProvider>
-          <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
-          <Main>
-            <Navbar />
-            <Wrapper>Video Wrapper...</Wrapper>
-          </Main>
-          </RouterProvider>
+          <Router>
+            <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
+            <Main>
+              <Navbar />
+              <Wrapper>
+                <Routes>
+                  <Route path="/">
+                    <Route index element={<Home />} />
+                    <Route path="video">
+                      <Route path=":id" element={Video} />
+                    </Route>
+                  </Route>
+                </Routes>
+              </Wrapper>
+            </Main>
+          </Router>
         </Container>
       </ThemeProvider>
     </>
