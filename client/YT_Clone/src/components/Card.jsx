@@ -30,17 +30,40 @@ const ChannelImage = Styled.img`
     background-color: #999;
 `;
 
+const Texts = Styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+`;
+
+const Title = Styled.h1`
+    font-size: 1rem;
+    font-weight: 500;
+    color: ${({ theme }) => theme.text};
+`;
+
+const ChannelName = Styled.h2`
+    font-size: 0.875rem;
+    color: ${({ theme }) => theme.textSoft};
+    margin: 0.5625rem 0;
+`;
+
+const Info = Styled.div`
+    font-size: 0.875rem;
+    color: ${({ theme }) => theme.textSoft};
+`;
+
 function Card() {
   return (
     <Container>
       <Image src="http://localhost:5173/src/img/logo.png" />
       <Details>
         <ChannelImage src="http://localhost:5173/src/img/logo.png" alt="" />
-        <div>
-          <h4>Video Title</h4>
-          <p>Channel Name</p>
-          <p>Views</p>
-        </div>
+        <Texts>
+          <Title>Video Title</Title>
+          <ChannelName>Channel Name</ChannelName>
+          <Info>123456 Views * 1 day ago</Info>
+        </Texts>
       </Details>
     </Container>
   );
