@@ -6,12 +6,13 @@ import { useState } from "react";
 
 //React Router Dom
 import {
-  createBrowserRouter,
-  RouterProvider,
+  // createBrowserRouter,
+  // RouterProvider,
+  BrowserRouter,
   Route,
   Routes,
-  Router,
-  Link,
+  // Router,
+  // Link,
 } from "react-router-dom";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -38,7 +39,7 @@ function App() {
     <>
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <Container>
-          <Router>
+          <BrowserRouter>
             <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
             <Main>
               <Navbar />
@@ -53,7 +54,7 @@ function App() {
                 </Routes>
               </Wrapper>
             </Main>
-          </Router>
+          </BrowserRouter>
         </Container>
       </ThemeProvider>
     </>
