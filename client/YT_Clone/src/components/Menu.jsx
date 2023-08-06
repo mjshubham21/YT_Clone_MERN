@@ -18,6 +18,7 @@ import {
 } from "@mui/icons-material";
 //PropTypes for typechecking
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -93,10 +94,12 @@ function Menu(props) {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={logo} alt="logo" />
-          MJtube
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Img src={logo} alt="logo" />
+            MJtube
+          </Logo>
+        </Link>
         <Item>
           {" "}
           <HomeIcon />
