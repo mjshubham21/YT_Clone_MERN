@@ -8,6 +8,7 @@ import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
 import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
+import helmet from "helmet";
 
 const app = express();
 dotenv.config();
@@ -29,6 +30,16 @@ const connect = () => {
 
 app.use(cors());
 app.use(express.json());
+
+// Use helmet middleware with the contentSecurityPolicy option
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "frame-src": ["'self'", "https://www.youtube.com"], // Allow YouTube videos
+    },
+  })
+);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 
