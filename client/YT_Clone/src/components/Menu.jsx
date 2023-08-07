@@ -13,8 +13,9 @@ import {
   MovieCreation as MovieCreationIcon,
   Flag as FlagIcon,
   HelpOutline as HelpOutlineIcon,
-  LightModeOutlined as LightModeOutlinedIcon,
+  // LightModeOutlined as LightModeOutlinedIcon,
   AccountCircleOutlined as AccountCircleOutlined,
+  SettingsBrightnessOutlined,
 } from "@mui/icons-material";
 //PropTypes for typechecking
 import PropTypes from "prop-types";
@@ -184,8 +185,9 @@ function Menu(props) {
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           {" "}
-          <LightModeOutlinedIcon />
-          Light Mode
+          {/* <LightModeOutlinedIcon /> */}
+          <SettingsBrightnessOutlined />
+          {darkMode ? "Light" : "Dark"} Mode
         </Item>
       </Wrapper>
     </Container>
