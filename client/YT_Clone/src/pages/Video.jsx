@@ -62,6 +62,63 @@ const Hr = styled.hr`
 const Recommendation = styled.div`
   flex: 2;
 `;
+const Channel = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ChannelInfo = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+const Image = styled.img`
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+`;
+
+const ChannelDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: ${({ theme }) => theme.text};
+  justify-content: space-between;
+  gap: 0.5rem;
+`;
+
+const ChannelName = styled.span`
+  font-weight: 500;
+`;
+
+const ChannelCounter = styled.span`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.textSoft};
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+`;
+
+const Description = styled.p`
+  font-size: 0.9rem;
+  /* color: ${({ theme }) => theme.textSoft};
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem; */
+`;
+
+const Subscribe = styled.button`
+  background-color: #cc1a00;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  height: 3rem;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+`;
 
 function Video() {
   // const videoId = "{jWpPHASZwRo}"; // Replace {YOUR_VIDEO_ID} with the actual YouTube video ID
@@ -100,6 +157,23 @@ function Video() {
           </Buttons>
         </Details>
         <Hr />
+        <Channel>
+          <ChannelInfo>
+            <Image src="https://rb.gy/3ptza" />
+            {/* Bugatti Chiron link shortened */}
+            <ChannelDetails>
+              <ChannelName>Channel Name</ChannelName>
+              <ChannelCounter>123K Subscribers</ChannelCounter>
+              <Description>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+                voluptatum, quibusdam, quia, quos voluptates voluptatibus
+                voluptatem quod quae quidem doloribus natus. Quisquam, quia
+                voluptates. Quisquam, quia voluptates.
+              </Description>
+            </ChannelDetails>
+          </ChannelInfo>
+          <Subscribe>Subscribe</Subscribe>
+        </Channel>
       </Content>
       <Recommendation>Recommendation.</Recommendation>
     </Container>
