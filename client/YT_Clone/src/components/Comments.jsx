@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import logo from "../img/logo.png";
+import Comment from "./Comment";
 
 const Container = styled.div`
   display: flex;
@@ -37,8 +38,10 @@ const Avatar = styled.img`
 
 const Input = styled.input`
   flex: 1;
-  border: 1px solid grey;
-  background-color: ${({ theme }) => theme.bg};
+  border: none;
+  outline: none;
+  border-bottom: 1px solid ${({ theme }) => theme.soft};
+  background-color: transparent;
   color: ${({ theme }) => theme.text};
   font-size: 1rem;
   &::placeholder {
@@ -53,6 +56,14 @@ function Comments() {
         <Avatar src={logo} />
         <Input placeholder="Add a comment." />
       </NewComment>
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
     </Container>
   );
 }
