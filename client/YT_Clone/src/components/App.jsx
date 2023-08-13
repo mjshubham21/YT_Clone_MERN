@@ -3,7 +3,7 @@ import Menu from "../components/Menu.jsx";
 import Navbar from "../components/Navbar.jsx";
 import { darkTheme, lightTheme } from "../utils/Theme.js";
 import { useState } from "react";
-
+import SignIn from "../pages/Signin.jsx";
 //React Router Dom
 import {
   // createBrowserRouter,
@@ -48,6 +48,7 @@ function App() {
               <Wrapper>
                 <Routes>
                   <Route path="/">
+                    <Route path="signin" element={<SignIn />} />
                     <Route index element={<Home />} />
                     <Route path="video">
                       <Route path=":id" element={<Video />} />

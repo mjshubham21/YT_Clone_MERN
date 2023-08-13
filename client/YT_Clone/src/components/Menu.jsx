@@ -29,6 +29,7 @@ const Container = styled.div`
   font-size: 0.875rem;
   position: sticky;
   top: 0;
+  transition: all 0.2s ease-in-out;
 `;
 
 const Wrapper = styled.div`
@@ -52,6 +53,10 @@ const Item = styled.div`
   gap: 0.5rem;
   ${"" /* margin-bottom: 0.5rem; */}
   cursor: pointer;
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+    border-radius: 0.25rem;
+  }
 `;
 
 const Hr = styled.hr`
@@ -119,10 +124,12 @@ function Menu(props) {
         <Hr />
         <Login>
           Sign in to like videos, comment, and subscribe.
-          <Button>
-            <AccountCircleOutlined />
-            SIGN IN
-          </Button>
+          <Link to="signin" style={{ textDecoration: "none" }}>
+            <Button>
+              <AccountCircleOutlined />
+              SIGN IN
+            </Button>
+          </Link>
         </Login>
         <Hr />
         <Title>Best of MJtube</Title>
